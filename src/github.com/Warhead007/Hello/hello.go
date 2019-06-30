@@ -1,5 +1,9 @@
 package main
 
+import (
+	"fmt"
+)
+
 func main() {
 	/////Lesson 1 hellowolrd/////
 	//fmt.Println("Hello World")
@@ -131,5 +135,27 @@ func main() {
 	// 	},
 	// }
 	// fmt.Println(teamData["team1"])
+
+	///Find min and max number on array///
+	x := []int{
+		48, 96, 86, 68,
+		57, 82, 63, 70,
+		37, 34, 83, 27,
+		19, 97, 9, 17,
+	}
+	///set for avoid value empty slice is 0 not corrct///
+	minValue := x[0]
+	maxValue := x[0]
+
+	for _, e := range x {
+		if e < minValue {
+			minValue = e
+		} else if e > maxValue {
+			maxValue = e
+		}
+	}
+
+	fmt.Println("Min Value is : ", minValue)
+	fmt.Println("Max Value is : ", maxValue)
 
 }
