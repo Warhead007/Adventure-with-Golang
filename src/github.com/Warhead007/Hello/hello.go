@@ -184,13 +184,27 @@ func main() {
 
 	/////Lesson 14 panic and recover/////
 	///if not have recover when program meet panic program with exit///
-	defer func() {
-		str := recover()
-		fmt.Println(str)
-	}()
-	panic("Something went wrong!!")
+	// 	defer func() {
+	// 		str := recover()
+	// 		fmt.Println(str)
+	// 	}()
+	// 	panic("Something went wrong!!")
+
+	///call function from pratice///
+	// ar := []int{2, 4, 6, 8, 10}
+	// fmt.Println(signature(ar))
+
+	// fmt.Println(half(1))
+
+	// fmt.Println(highestFunc(1, 2, 3, 4, 5, 6, 7))
+
+	for i := 1; i < 20; i++ {
+		fmt.Print(fibonacci(i), " ")
+	}
+
 }
 
+//////////////////////////////////////////////////////////////////////////////////////
 /////Lesson 10 function/////
 
 ///function with one return///
@@ -240,3 +254,42 @@ func main() {
 // func two() {
 // 	fmt.Println(2)
 // }
+
+/////pratice/////
+// func signature(arr []int) int {
+// 	sum := 0
+// 	for i := 0; i < len(arr); i++ {
+// 		sum += arr[i]
+// 	}
+// 	return sum
+// }
+
+// func half(input int) (int, bool) {
+// 	if input%2 == 0 {
+// 		return (input / 2), true
+// 	} else if input%2 == 1 {
+// 		return (input / 2), false
+// 	}
+// 	return 3, false
+// }
+
+// func highestFunc(input ...int) int {
+// 	highestValue := 0
+// 	for _, v := range input {
+// 		if highestValue < v {
+// 			highestValue = v
+// 		}
+// 	}
+// 	return highestValue
+// }
+
+func fibonacci(input int) int {
+	if input == 1 {
+		return 1
+	} else if input == 2 {
+		return 2
+	} else {
+		return fibonacci(input-1) + fibonacci(input-2)
+	}
+
+}
