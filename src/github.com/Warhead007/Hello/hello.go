@@ -198,9 +198,37 @@ func main() {
 
 	// fmt.Println(highestFunc(1, 2, 3, 4, 5, 6, 7))
 
-	for i := 1; i < 20; i++ {
-		fmt.Print(fibonacci(i), " ")
+	// for i := 1; i < 20; i++ {
+	// 	fmt.Print(fibonacci(i), " ")
+	// }
+
+	///call function from lesson 15///
+	///use pointer///
+	// 	x := 5
+	// 	mutiplyFunc(&x)
+	// 	fmt.Println(x)
+
+	// 	///use new///
+	// 	input := new(int)
+	// 	*input = 20
+	// 	mutiplyFunc(input)
+	// 	fmt.Println(*input)
+
+	/////lesson 16 struct/////
+	type Dimensions struct {
+		height,
+		width,
+		thickness float32
 	}
+	///initialization///
+	d := Dimensions{100.4, 50.2, 21.1}
+	fmt.Println(d)
+	///access fields///
+	fmt.Println(d.height)
+	volume := func(d Dimensions) float32 {
+		return d.height * d.width * d.thickness
+	}
+	fmt.Println(volume(d))
 
 }
 
@@ -283,13 +311,18 @@ func main() {
 // 	return highestValue
 // }
 
-func fibonacci(input int) int {
-	if input == 1 {
-		return 1
-	} else if input == 2 {
-		return 2
-	} else {
-		return fibonacci(input-1) + fibonacci(input-2)
-	}
+// func fibonacci(input int) int {
+// 	if input == 1 {
+// 		return 1
+// 	} else if input == 2 {
+// 		return 2
+// 	} else {
+// 		return fibonacci(input-1) + fibonacci(input-2)
+// 	}
 
-}
+// }
+
+/////Lesson 15 pointer and new/////
+// func mutiplyFunc(input *int) {
+// 	*input = *input * 2
+// }
