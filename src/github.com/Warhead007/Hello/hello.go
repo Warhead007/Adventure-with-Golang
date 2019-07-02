@@ -1,8 +1,6 @@
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
 
 func main() {
 	/////Lesson 1 hellowolrd/////
@@ -137,25 +135,108 @@ func main() {
 	// fmt.Println(teamData["team1"])
 
 	///Find min and max number on array///
-	x := []int{
-		48, 96, 86, 68,
-		57, 82, 63, 70,
-		37, 34, 83, 27,
-		19, 97, 9, 17,
-	}
+	// x := []int{
+	// 	48, 96, 86, 68,
+	// 	57, 82, 63, 70,
+	// 	37, 34, 83, 27,
+	// 	19, 97, 9, 17,
+	// }
 	///set for avoid value empty slice is 0 not corrct///
-	minValue := x[0]
-	maxValue := x[0]
+	// minValue := x[0]
+	// maxValue := x[0]
 
-	for _, e := range x {
-		if e < minValue {
-			minValue = e
-		} else if e > maxValue {
-			maxValue = e
-		}
-	}
+	// for _, e := range x {
+	// 	if e < minValue {
+	// 		minValue = e
+	// 	} else if e > maxValue {
+	// 		maxValue = e
+	// 	}
+	// }
 
-	fmt.Println("Min Value is : ", minValue)
-	fmt.Println("Max Value is : ", maxValue)
+	// fmt.Println("Min Value is : ", minValue)
+	// fmt.Println("Max Value is : ", maxValue)
 
+	///call function in lesson 10///
+	// fmt.Println(f())
+	// fmt.Println(r())
+	// i(20)
+	// t(1, 2, 3)
+	// a(1, 2, 3, 4, 5, 6, 7, 8, 9)
+
+	/////Lesson 11 closure/////
+	// localVar := 0
+	// add := func(x, y int) int {
+	// 	sum := x + y
+	// 	localVar = sum
+	// 	return sum
+	// }
+	// fmt.Println(add(1, 6))
+	///Can using variable in same function///
+	// fmt.Println(localVar)
+
+	///call function in lesson 12///
+	// fmt.Println(plus(50))
+
+	///call function in lesson 13///
+	///if function have defer they with work at the last of main work///
+	// defer two()
+	// one()
+
+	/////Lesson 14 panic and recover/////
+	///if not have recover when program meet panic program with exit///
+	defer func() {
+		str := recover()
+		fmt.Println(str)
+	}()
+	panic("Something went wrong!!")
 }
+
+/////Lesson 10 function/////
+
+///function with one return///
+// func f() int {
+// 	return 100
+// }
+
+///function with more than one return///
+// func r() (int, int, int) {
+// 	return 10, 20, 30
+// }
+
+///function with one input///
+// func i(x int) {
+// 	fmt.Println(x)
+// }
+
+///function with more than one input///
+// func t(x int, y int, z int) {
+// 	fmt.Println(x, y, z)
+// }
+
+///function with infinity input///
+// func a(args ...int) {
+// 	total := 0
+// 	for _, v := range args {
+// 		total += v
+// 	}
+// 	fmt.Println(total)
+// }
+
+/////Lesson 12 function call itself/////
+// func plus(x uint) uint {
+///Note:if not put that code with give run time error///
+// if x == 0 {
+// 	return 1
+// }
+///plus until x = 0///
+// 	return x + plus(x-1)
+// }
+
+/////Lesson 13 defer/////
+// func one() {
+// 	fmt.Println(1)
+// }
+
+// func two() {
+// 	fmt.Println(2)
+// }
