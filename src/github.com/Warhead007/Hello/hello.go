@@ -2,6 +2,13 @@ package main
 
 import "fmt"
 
+//Person is struct to store personal data//
+type Person struct {
+	Name     string
+	Age      int
+	Location string
+}
+
 func main() {
 	/////Lesson 1 hellowolrd/////
 	//fmt.Println("Hello World")
@@ -215,20 +222,24 @@ func main() {
 	// 	fmt.Println(*input)
 
 	/////lesson 16 struct/////
-	type Dimensions struct {
-		height,
-		width,
-		thickness float32
-	}
-	///initialization///
-	d := Dimensions{100.4, 50.2, 21.1}
-	fmt.Println(d)
-	///access fields///
-	fmt.Println(d.height)
-	volume := func(d Dimensions) float32 {
-		return d.height * d.width * d.thickness
-	}
-	fmt.Println(volume(d))
+	// type Dimensions struct {
+	// 	height,
+	// 	width,
+	// 	thickness float32
+	// }
+	// ///initialization///
+	// d := Dimensions{100.4, 50.2, 21.1}
+	// fmt.Println(d)
+	// ///access fields///
+	// fmt.Println(d.height)
+	// volume := func(d Dimensions) float32 {
+	// 	return d.height * d.width * d.thickness
+	// }
+	// fmt.Println(volume(d))
+
+	///call function from lesson 17///
+	p := Person{"Ham", 32, "Chonburi"}
+	fmt.Println(p.Detail())
 
 }
 
@@ -326,3 +337,10 @@ func main() {
 // func mutiplyFunc(input *int) {
 // 	*input = *input * 2
 // }
+
+/////lesson 17 method/////
+
+//Detail //
+func (p *Person) Detail() string {
+	return p.Name + " " + p.Location
+}
